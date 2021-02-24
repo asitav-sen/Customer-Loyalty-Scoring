@@ -29,6 +29,7 @@ source("mod_monthlyvaltab.R")
 source("mod_sow.R")
 source("mod_maptab.R")
 source("mod_segrev.R")
+source("manualpage.R")
 
 
 # Define UI for application that draws a histogram
@@ -83,6 +84,10 @@ UI <- argonDashPage(
             argonTabItem(
                 tabName = "lloyind",
                 llicard
+            ),
+            argonTabItem(
+                tabName = "manual",
+                manualpage
             )
             
         )
@@ -254,7 +259,7 @@ server <- function(input, output, session) {
  
 # Tab customer value  
     
-    scatterInfoServer("customervalueindex",valscatterdata(), valdeltamaxdata())
+    scatterInfoServer("customervalueindex",valscatterdata(), valdeltamaxdata(),Xtitle ="Repeat Purchase Index")
     monthlyvalServer("customervaluemonthly", valdeltadata())
     sowtabServer("customervalsow", sowval())
     

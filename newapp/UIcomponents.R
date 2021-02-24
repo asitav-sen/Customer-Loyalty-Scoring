@@ -31,6 +31,11 @@ Sidebar<-argonDashSidebar(
       tabName = "premium_tab",
       style="text-align:center",
       "Premium"
+    ),
+    argonSidebarItem(
+      tabName = "manual",
+      style="text-align:center",
+      "Manual"
     )
   ),
   br(),
