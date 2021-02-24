@@ -1,7 +1,8 @@
 
 lineplotUI<- function(id){
   ns<- NS(id)
-  plotlyOutput(ns("lineplot"), width = "auto")
+  plotlyOutput(ns("lineplot"))
+  
 }
 
 lineplotServer<- function(id, xval, yval, cval, xtitle="", ytitle=""){
@@ -9,6 +10,7 @@ lineplotServer<- function(id, xval, yval, cval, xtitle="", ytitle=""){
     id,
     function(input, output, session){
       output$lineplot<- renderPlotly({
+        req(xval, yval, cval)
         plot_ly(
           x= xval,
           y= yval,

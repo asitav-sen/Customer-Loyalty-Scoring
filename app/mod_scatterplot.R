@@ -9,6 +9,7 @@ scatterplotServer<- function(id, xval, yval, cval, xtitle="", ytitle=""){
     id,
     function(input, output, session){
       output$scatter<- renderPlotly({
+        req(xval, yval, cval)
         plot_ly(
           x= xval,
           y= yval,

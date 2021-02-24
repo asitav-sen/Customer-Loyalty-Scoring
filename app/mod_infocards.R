@@ -1,6 +1,7 @@
 infocardUI<- function(id){
   ns<- NS(id)
   uiOutput(ns("infocard"))
+  
 }
 
 infocardServer<- function(id, Value, Title="", Stat=NULL, Description="", Icon, Icon_bg="default", BGC){
@@ -9,6 +10,7 @@ infocardServer<- function(id, Value, Title="", Stat=NULL, Description="", Icon, 
     function(input, output, session){
       
       output$infocard<- renderUI({
+        req(Value,Stat)
         argonInfoCard(
           value=Value,
           title = Title,

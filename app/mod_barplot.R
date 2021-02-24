@@ -9,7 +9,8 @@ hbarplotUI<- function(id,filtervalues){
     ),
     argonColumn(
       width = 8,
-      plotlyOutput(ns("hbar")) 
+      plotlyOutput(ns("hbar"))
+       
     )
   )
 }
@@ -18,6 +19,7 @@ hbarplotServer<- function(id, df, xtitle="", ytitle=""){
   moduleServer(
     id,
     function(input, output, session){
+      
       fd<-reactive({
         as.POSIXct(input$hbarfilter, tz="UTC")
       })
@@ -28,6 +30,7 @@ hbarplotServer<- function(id, df, xtitle="", ytitle=""){
       })
       
       output$hbar<- renderPlotly({
+        req(df)
         dat()%>%
           group_by(Segment)%>%
           summarise(sales=sum(miles)*10)%>%

@@ -10,7 +10,7 @@ Sidebar<-argonDashSidebar(
   id = "my_sidebar",
   brand_url = "https://www.funmiles.net/",
   brand_logo = "https://www.funmiles.net/static/upload/Logos/FunMiles_logo.png",
-  argonSidebarHeader(title = "Menu"),
+  #argonSidebarHeader(title = "Menu"),
   argonSidebarMenu(
     argonSidebarItem(
       tabName = "lreppurind",
@@ -21,6 +21,11 @@ Sidebar<-argonDashSidebar(
       tabName = "lcusvalind",
       style="text-align:center",
       "LaNubia Customer Value Index"
+    ),
+    argonSidebarItem(
+      tabName = "lloyind",
+      style="text-align:center",
+      "LaNubia Loyalty Index"
     ),
     argonSidebarItem(
       tabName = "premium_tab",
@@ -46,7 +51,7 @@ Header<- argonDashHeader(
     h1("Grow your business, the Funmiles way", style="color:white"),
     h3("with Funmiles Insights", style="color:white"),
     br(),
-    h2("See what can you do"),
+    h2("Explore possibilities"),
     argonRow(
       argonButton(
         src = NULL,

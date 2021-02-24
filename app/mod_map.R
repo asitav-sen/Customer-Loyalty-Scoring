@@ -7,7 +7,9 @@ mapplotServer<- function(id, df, mname="GAS CURACAO"){
   moduleServer(
     id,
     function(input, output, session){
+      
       output$mapplot<- renderLeaflet({
+        req(df)
         df%>%
         leaflet()%>%
           addTiles()%>%
