@@ -8,6 +8,7 @@ library(waiter)
 library(lubridate)
 library(tidyverse)
 library(shinymanager)
+library(shinycssloaders)
 
 gif <-
     paste0("https://media.giphy.com/media/RLsct1jsRVsVFupW7a/giphy.gif")
@@ -42,7 +43,7 @@ UI <- argonDashPage(
     header = Header,
     body = argonDashBody(
         use_waiter(),
-        waiter_preloader(loading_screen, color = "white"),
+        waiter_show_on_load(loading_screen, color = "white"),
         #waiter_on_busy(loading_screen, color = transparent(.5)),
         argonTabItems(
             argonTabItem(
